@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #282541;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.App {
+  text-align: center;
+}
+
+h1 {
+  color: #fff;
+  margin-bottom: 0.5rem;
+  font-size: 1.75rem;
+}
+
+.TodoWrapper {
+  background: rgba(23, 23, 23, 0.5); 
+  margin-top: 5rem;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 1000px;
+  backdrop-filter: blur(8px); 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.TodoForm {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.input-container {
+  display: flex;
+}
+
+.form-group {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.todo-input {
+  outline: none;
+  background: none;
+  border: 1px solid #ffffff;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  color: #fff;
+  border-radius: 20px;
+}
+
+.todo-input::placeholder {
+  color: #ffffff4d;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px; 
+}
+
+.todo-btn {
+  background: #282541;
+  color: #fff;
+  border: none;
+  padding: 0.55rem;
+  cursor: pointer;
+  border-radius: 20px;
+  width: 100px;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2); 
+}
+
+.todo-btn:hover {
+  background: #565656; 
+}
+
+
+.Todo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #282541;
+  color: #fff;
+  padding: 0.75rem 1rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.task-container {
+  flex: 1;
+}
+
+.task {
+  margin: 0;
+  font-weight: bold;
+  text-align: left;
+  font-size: 20px;
+}
+
+.description {
+  margin: 0;
+  text-align: left;
+  font-size: 12px;
+}
+
+.icon-container {
+  display: flex;
+  gap: 0.5rem;
+}
+
+
+.fa-trash {
+  margin-left: 0.75rem;
+}
+
+.incompleted {
+  color: #fff;
+  cursor: pointer;
+}
+
+.completed {
+  color: #c5aeff;
+  text-decoration: line-through;
+  cursor: pointer;
+}
+
+.edit-icon,
+.delete-icon {
+  cursor: pointer;
+}
+.secondaryBtn{
+  background-color: rgb(71, 71, 71);
+  color: white;
+  border:none;
+  border-radius: 0px;
+  margin-bottom: 25px;
+  padding: 10px;
+  width: fit-content;
+  cursor: pointer;
+
+}
+.active{
+  background-color: #282541;
+}
+.complete-icon{
+  cursor: pointer;
+  margin-right: 8px;
+}

@@ -8,7 +8,8 @@
 }
 
 body {
-  background: #282541;
+
+  background-image: url("https://c0.wallpaperflare.com/preview/409/537/147/tree-forest-detail-green.jpg");
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,7 +21,7 @@ body {
 
 h1 {
   color: #fff;
-  margin-bottom: 0.5rem;
+  margin-bottom: 2rem;
   font-size: 1.75rem;
 }
 
@@ -69,7 +70,7 @@ h1 {
 }
 
 .todo-btn {
-  background: #282541;
+  background: #19291b;
   color: #fff;
   border: none;
   padding: 0.55rem;
@@ -88,7 +89,7 @@ h1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #282541;
+  background: #19291b;
   color: #fff;
   padding: 0.75rem 1rem;
   border-radius: 5px;
@@ -149,7 +150,7 @@ h1 {
 
 }
 .active{
-  background-color: #282541;
+  background-color: #19291b;
 }
 .complete-icon{
   cursor: pointer;

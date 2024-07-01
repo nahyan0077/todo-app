@@ -2,15 +2,17 @@ import React,{useState} from 'react'
 import { ToDoForm } from './ToDoForm'
 import ToDoList from './ToDoList'
 import { EditToDoForm } from './EditToDoForm'
-import { ToDoCompleate } from './ToDoCompleate'
+import { ToDoComplete } from './ToDoComplete'
 import {useEffect} from 'react'
 
 
 
 
 export const ToDoWrapper = () => {
+    
     const [toDos,setTodos] = useState([])
     const [isCompleteScreen, setIsCompleteScreen] = useState (false);
+
     useEffect(() => {
         const storedToDos = JSON.parse(localStorage.getItem('toDoItems'));
         if (storedToDos) {
@@ -19,10 +21,12 @@ export const ToDoWrapper = () => {
     }, []);
     
     const addToDo = (toDo,descrp) => {
-        const newToDo = {id: Date.now(), task: toDo,description: descrp, compleated : false, isEditing: false}
+        const newToDo = {id: Date.now(), task: toDo,description: descrp, completed : false, isEditing: false}
         let updatedToDo = [...toDos,newToDo]
-        setTodos(updatedToDo)
-        localStorage.setItem('toDoItems',JSON.stringify(updatedToDo))
+        if(toDo && descrp){
+            setTodos(updatedToDo)
+            localStorage.setItem('toDoItems',JSON.stringify(updatedToDo))
+        }
     }
     
     const deleteToDo = (id) => {
@@ -48,16 +52,16 @@ export const ToDoWrapper = () => {
         localStorage.setItem('toDoItems',JSON.stringify(updatedToDo))    
     }
     
-    const comleateToDo = (id) =>{
+    const completeToDo = (id) =>{
         const updatedToDo = toDos.map((todo)=>
-            todo.id === id ? {...todo, compleated : !todo.compleated } : todo
+            todo.id === id ? {...todo, completed : !todo.completed } : todo
         )
         setTodos(updatedToDo)
         localStorage.setItem('toDoItems',JSON.stringify(updatedToDo))    
 
     }
 
-    const filteredToDos = toDos.filter((todo) => (isCompleteScreen ? todo.compleated : !todo.compleated));
+    const filteredToDos = toDos.filter((todo) => (isCompleteScreen ? todo.completed : !todo.completed));
 
     return (
         <div>
@@ -66,13 +70,13 @@ export const ToDoWrapper = () => {
                 <br />
                 <ToDoForm addToDo={addToDo} />
                 <br />
-                <ToDoCompleate setIsCompleteScreen={setIsCompleteScreen} isCompleteScreen={isCompleteScreen} />
+                <ToDoComplete setIsCompleteScreen={setIsCompleteScreen} isCompleteScreen={isCompleteScreen} />
                 {
                    filteredToDos.map((toDo,index)=>{
                         if (toDo.isEditing ) {
                             return (<EditToDoForm key={index} editToDo={editTask} task={toDo} />)
                         }else{
-                            return(<ToDoList task={toDo} key={index} deleteToDo={deleteToDo} editToDo={editToDo} comleateToDo={comleateToDo} />)
+                            return(<ToDoList task={toDo} key={index} deleteToDo={deleteToDo} editToDo={editToDo} completeToDo={completeToDo} />)
                         }
                     })
                 }

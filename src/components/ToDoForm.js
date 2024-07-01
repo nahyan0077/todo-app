@@ -29,7 +29,7 @@ export const ToDoForm = ({ addToDo }) => {
                 <br />
                 <input onChange={(e) => {
                     setDescription(e.target.value)
-                }} type="text" value={description} className="todo-input" placeholder='What your description?' />
+                }} type="text" value={description} className="todo-input" placeholder='Write your description?' />
                 <br />
             </div>
             </div>

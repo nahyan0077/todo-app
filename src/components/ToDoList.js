@@ -6,7 +6,7 @@ import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 
-export default function ToDoList({task,deleteToDo,editToDo,comleateToDo}) {
+export default function ToDoList({task,deleteToDo,editToDo,completeToDo}) {
 
     return (
         <div className="Todo">
@@ -15,9 +15,9 @@ export default function ToDoList({task,deleteToDo,editToDo,comleateToDo}) {
                 <p className="description">{task.description}</p>
             </div>
             <div className="icon-container">
-                {task.compleated ? 
-                    <FontAwesomeIcon onClick={() => comleateToDo(task.id)} className="complete-icon" icon={faTimes} /> :
-                    <FontAwesomeIcon onClick={() => comleateToDo(task.id)} className="complete-icon" icon={faCheck} />
+                {task.completed ? 
+                    <FontAwesomeIcon onClick={() => completeToDo(task.id)} className="complete-icon" icon={faTimes} /> :
+                    <FontAwesomeIcon onClick={() => completeToDo(task.id)} className="complete-icon" icon={faCheck} />
 
                 }
                 <FontAwesomeIcon onClick={() => editToDo(task.id)} className="edit-icon" icon={faPenToSquare} />

@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const ToDoCompleate = ({setIsCompleteScreen, isCompleteScreen}) => {
+export const ToDoComplete = ({setIsCompleteScreen, isCompleteScreen}) => {
 
   return (
     <div>
